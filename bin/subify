@@ -1,0 +1,11 @@
+#! /usr/bin/env ruby
+
+search_text, replace_text = ARGV
+
+raise 'Argument Missing' if ARGV.empty?
+
+ARGV.size.times {ARGV.shift}
+
+ARGF.each_line do |line|
+  puts line.gsub(search_text, replace_text)
+end
